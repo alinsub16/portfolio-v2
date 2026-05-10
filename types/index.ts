@@ -35,3 +35,11 @@ export interface ContactFormData {
   subject: string;
   message: string;
 }
+
+export interface ExperienceTypes {
+  role:String;
+  company:String;
+  period:String;
+  description:String;
+  stacks:String[];
+}

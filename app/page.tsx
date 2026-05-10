@@ -7,6 +7,7 @@ import Projects from "@/components/sections/Projects";
 import Navbar from "@/components/layout/Navbar";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/layout/Footer";
+import Experience from "@/components/sections/Experience";
 
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
         <Hero />
         <About />
         <Skills />
+        <Experience />
         <Projects />
         <Contact />
       </main>
