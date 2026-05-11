@@ -1,6 +1,10 @@
+'use client'
+
 import React from 'react'
-import { Briefcase, ExternalLink, GitFork } from 'lucide-react';
+import {  ExternalLink, GitFork } from 'lucide-react';
 import { LargeCardProps } from "@/types/index";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 const Cards: React.FC<LargeCardProps> = ({image, title, description, tags}) => {
     return (
@@ -9,7 +13,7 @@ const Cards: React.FC<LargeCardProps> = ({image, title, description, tags}) => {
                 <img src={image} alt={title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
                     <button className="p-3 bg-white text-slate-900 rounded-full hover:scale-110 transition-transform"><ExternalLink size={20} /></button>
-                    <button className="p-3 bg-white text-slate-900 rounded-full hover:scale-110 transition-transform"><GitFork size={20} /></button>
+                    <button className="p-3 bg-white text-slate-900 rounded-full hover:scale-110 transition-transform"><FontAwesomeIcon icon={faGithub} size="lg" /></button>
                 </div>
             </div>
             <div className="p-8">

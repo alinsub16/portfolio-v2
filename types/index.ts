@@ -1,5 +1,5 @@
 import { LucideIcon } from "lucide-react";
-import { ReactElement } from "react";
+import { IconType } from "react-icons";
 
 export interface Project {
   title: string;
@@ -9,14 +9,14 @@ export interface Project {
 }
 export interface Skill {
   name: string;
-  icon: LucideIcon;
+  icon: IconType;
   color: string;
 }
 
 export interface SmallCardProps {   
     name: string;   
     color: string;
-    icon: LucideIcon;
+    icon: IconType;
     size?: number ;
 }
 
@@ -41,5 +41,5 @@ export interface ExperienceTypes {
   company:String;
   period:String;
   description:String;
-  stacks:String[];
+  achievements:String[];
 }
