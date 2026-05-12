@@ -1,11 +1,15 @@
 import { LucideIcon } from "lucide-react";
+import { StaticImageData } from "next/image";
 import { IconType } from "react-icons";
 
 export interface Project {
   title: string;
   description: string;
   tags: string[];
-  image: string;
+  image: StaticImageData;
+  liveUrl: string;
+  githubUrl: string;
+  isLatest?: boolean;
 }
 export interface Skill {
   name: string;
@@ -22,10 +26,13 @@ export interface SmallCardProps {
 
 export interface LargeCardProps {
     description: string;
-    image: string;
+    image: string | StaticImageData;
     title: string;
+    liveUrl: string ;
+    githubUrl: string;
     tags: string[];
     size?: number;
+    isLatest?: boolean;
 }
 
 // Form Types

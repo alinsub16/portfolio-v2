@@ -1,22 +1,36 @@
 import { Project } from "@/types/index";
+import todoImg from "@/assets/todo-img.jpg";
+import movieSearchImg from "@/assets/movie-search-img.jpg";
+import circlesChatImg from "@/assets/circles-chat-img.jpg";
+
 
 export const PROJECTS: Project[] = [
   {
-    title: "E-Commerce Titan",
-    description: "A high-performance marketplace with real-time inventory management.",
-    tags: ["REACT", "STRIPE", "NEXT.JS"],
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
+    title: "Circles Chat",
+    description: "A real-time, fully responsive chat application featuring an integrated AI assistant for message proofreading and improvement",
+    tags: ["React JS", "TypeScript", "Tailwind CSS", "Socket.IO", "Express JS", "MongoDB", "Groq LLM API", "Cloudinary"],
+    liveUrl: "https://chat-app-eta-two-31.vercel.app/chat",
+    githubUrl: "https://github.com/alinsub16/chat-app",
+    image: circlesChatImg,
+    isLatest: true
   },
   {
-    title: "DataInsight Dashboard",
-    description: "Complex data visualization suite for analyzing enterprise user metrics.",
-    tags: ["D3.JS", "TYPESCRIPT", "PYTHON"],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
+    title: "To-DO App",
+    description: "Modern design with weather updates and inspirational quotes",
+    tags: ["React JS", "Tailwind CSS","Express JS", "MongoDB", "Axios"],
+    liveUrl: "https://alinsub16.github.io/todolist-UI/",
+    githubUrl: "https://github.com/alinsub16/todolist-UI",
+    image: todoImg,
+    isLatest: false
   },
   {
-    title: "CloudTask SaaS",
-    description: "Collaborative task management tool focused on team productivity.",
-    tags: ["VUE.JS", "DOCKER", "AWS"],
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=800"
-  }
+    title: "Movie Search",
+    description: "Responsive web app with real-time search up to latest movies",
+    tags: ["React JS", "Tailwind CSS","Axios"],
+    liveUrl: "https://alinsub16.github.io/movie-search/#/",
+    githubUrl: "https://github.com/alinsub16/movie-search",
+    image: movieSearchImg,
+    isLatest: false
+  },
+  
 ];

@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
                             Crafting <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Digital</span> Experiences.
                         </h1>
                         <p className="text-xl text-slate-400 mb-10 max-w-lg leading-relaxed">
-                            Full-stack Developer specializing in building high-performance, accessible, and beautiful web applications.
+                            Web Developer specializing in building high-performance, accessible, and beautiful web applications.
                         </p>
                         <div className="flex flex-wrap gap-4">
                             <a href="#projects" className="px-8 py-4 bg-cyan-500 hover:bg-cyan-600 text-slate-900 rounded-lg font-bold transition-all shadow-lg shadow-cyan-500/20">
@@ -44,7 +44,7 @@ const Hero: React.FC = () => {
                                 <span className="text-pink-500">const</span> developer: <span className="text-blue-400">Dev</span> = {'{'}<br />
                                 &nbsp;&nbsp;name: <span className="text-yellow-200">'Christopher'</span>,<br />
                                 &nbsp;&nbsp;role: <span className="text-yellow-200">'Web Developer'</span>,<br />
-                                &nbsp;&nbsp;passions: [<span className="text-yellow-200">'Clean Code'</span>, <span className="text-yellow-200">'UX'</span>],<br />
+                                &nbsp;&nbsp;passions: [<span className="text-yellow-200">'Clean Code'</span>, <span className="text-yellow-200">Responsive Design</span>],<br />
                                 &nbsp;&nbsp;isHardworking: <span className="text-blue-400">true</span>,<br />
                                 &nbsp;&nbsp;coffeeLevel: <span className="text-yellow-400">'Infinite'</span><br />
                                 {'}'};<br /><br />
