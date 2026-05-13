@@ -10,7 +10,7 @@ const Input:React.FC<InputProps> = ({variant = "default", className = "", id, er
 
  const variants = {
     default:
-      "w-full px-6 py-4 bg-slate-950 border border-slate-800 rounded-2xl focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/10 transition-all text-white",
+      "w-full sm:max-w-full  px-6 py-4 bg-slate-950 border border-slate-800 rounded-2xl focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/10 transition-all text-white",
   };
 
 const inputId = id || props.name;

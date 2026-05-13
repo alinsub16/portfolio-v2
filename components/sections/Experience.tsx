@@ -5,7 +5,7 @@ import ExperienceCards from '@/components/ui/ExperienceCards'
 
 const Experience:React.FC = () => {
   return (
-    <section id="experience" className="py-32 px-6 bg-slate-900/30">
+    <section id="experience" className="py-32 px-4 bg-slate-900/30">
         <div className="max-w-4xl mx-auto">
         <div className="text-center mb-20">
             <h2 className="text-4xl font-bold mb-4 text-white">Career Path</h2>

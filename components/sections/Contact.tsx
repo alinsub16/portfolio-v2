@@ -4,16 +4,16 @@ import ContactForm from '@/components/ui/ContactForm'
 
 const Contact: React.FC = () => {
   return (
-    <section id="contact" className="py-32 px-6">
+    <section id="contact" className="py-32 px-6 md:bg-slate-0 bg-slate-900/30">
           <div className="max-w-7xl mx-auto">
-            <div className="bg-slate-900/50 rounded-[40px] p-8 md:p-20 border border-slate-800 relative overflow-hidden shadow-2xl">
+            <div className="md:bg-slate-900/50 md:rounded-[40px] md:overflow-hidden md:p-20 md:border md:border-white/20 rounded-3xl  md:shadow-2xl relative">
               <div className="absolute top-0 right-0 p-12 opacity-5 pointer-events-none">
                 <Send size={300} />
               </div>
 
               <div className="grid lg:grid-cols-2 gap-20 relative z-10">
                 <div className="space-y-8">
-                  <h2 className="text-5xl font-black text-white leading-tight">
+                  <h2 className="md:text-5xl text-4xl font-black text-white leading-tight">
                     Let's build <br/> something <span className="text-cyan-400 underline decoration-cyan-400/30 underline-offset-8">epic</span>.
                   </h2>
                   <p className="text-slate-400 text-lg">

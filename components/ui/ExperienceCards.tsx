@@ -4,7 +4,7 @@ import { ExperienceTypes } from '@/types/index'
 
 const ExperienceCards:React.FC<ExperienceTypes> = ({role,company,period,description,achievements}) => {
   return (
-    <div className="relative pl-10 md:pl-12 group">
+    <div className="relative pl-7 md:pl-12 group">
             {/* Timeline Dot */}
             <div className="absolute -left-2.25 top-0 w-4 h-4 rounded-full bg-slate-800 border-2 border-cyan-500 group-hover:scale-125 transition-transform duration-300 z-10 shadow-[0_0_10px_rgba(34,211,238,0.5)]"></div>
             

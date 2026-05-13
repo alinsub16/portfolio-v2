@@ -16,14 +16,14 @@ const Hero: React.FC = () => {
                 <div className="max-w-7xl mx-auto px-6 relative z-10 w-full grid lg:grid-cols-2 gap-12 items-center">
                     <div>
                         <p className="font-mono text-cyan-400 font-medium mb-4 tracking-widest uppercase">Available for work</p>
-                        <h1 className="text-5xl sm:text-7xl font-extrabold text-white leading-tight mb-6">
-                            Crafting <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Digital</span> Experiences.
+                        <h1 className="text-4xl sm:text-7xl font-extrabold text-white leading-tight mb-6">
+                            Crafting <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 block">Digital</span> Experiences.
                         </h1>
                         <p className="text-xl text-slate-400 mb-10 max-w-lg leading-relaxed">
                             Web Developer specializing in building high-performance, accessible, and beautiful web applications.
                         </p>
                         <div className="flex flex-wrap gap-4">
-                            <a href="#projects" className="px-8 py-4 bg-cyan-500 hover:bg-cyan-600 text-slate-900 rounded-lg font-bold transition-all shadow-lg shadow-cyan-500/20">
+                            <a href="#projects" className="md:px-8 px-6 py-4 bg-cyan-500 hover:bg-cyan-600 text-slate-900 rounded-lg font-bold transition-all shadow-lg shadow-cyan-500/20">
                                 View My Work
                             </a>
                             <a href="#contact" className="px-8 py-4 border border-slate-700 hover:border-cyan-400 text-white rounded-lg font-bold transition-all">

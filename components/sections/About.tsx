@@ -17,7 +17,7 @@ const About: React.FC = () => {
                 />
              <div className="absolute inset-0 bg-cyan-500/10 group-hover:bg-transparent transition-colors"></div>
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-cyan-500 text-slate-900 p-6 rounded-2xl shadow-xl transform rotate-3">
+              <div className="absolute -bottom-6 md:-right-6 right-4 bg-cyan-500 text-slate-900 p-6 rounded-2xl shadow-xl transform rotate-3">
                 <span className="text-4xl font-black block">2+</span>
                 <p className="text-xs font-bold uppercase tracking-widest">Years Exp.</p>
               </div>
