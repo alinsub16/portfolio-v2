@@ -2,28 +2,43 @@ import React from 'react'
 import Image from "next/image";
 import { User } from 'lucide-react'
 import Me from "@/assets/me.jpg";
+import { motion } from "motion/react";
+import { fadeUp, fadeLeftToRight, fadeRightToLeft } from '@/animations/variants';
 
 const About: React.FC = () => {
   return (
     <>
-      <section id="about" className="py-32 px-6 bg-slate-900/30">
+      <section id="about" className="py-32 px-6 bg-slate-900/30" >
           <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-16 items-center">
             <div className="w-full md:w-1/2 relative">
-              <div className="aspect-square rounded-2xl overflow-hidden border-2 border-slate-800 shadow-2xl relative group">
+              <motion.div className="aspect-square rounded-2xl overflow-hidden border-2 border-slate-800 shadow-2xl relative group"
+                variants={fadeLeftToRight}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
                 <Image
                   src={Me}
                   alt="Profile"
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                 />
              <div className="absolute inset-0 bg-cyan-500/10 group-hover:bg-transparent transition-colors"></div>
-              </div>
+              </motion.div>
               <div className="absolute -bottom-6 md:-right-6 right-4 bg-cyan-500 text-slate-900 p-6 rounded-2xl shadow-xl transform rotate-3">
                 <span className="text-4xl font-black block">2+</span>
                 <p className="text-xs font-bold uppercase tracking-widest">Years Exp.</p>
               </div>
             </div>
             
-            <div className="w-full md:w-1/2 space-y-6">
+            <motion.div className="w-full md:w-1/2 space-y-6"
+              variants={fadeRightToLeft}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            
+            >
               <h2 className="text-4xl font-bold flex items-center gap-4">
                 <User className="text-cyan-400" /> About Me
               </h2>
@@ -36,7 +51,7 @@ const About: React.FC = () => {
                   <p className="text-slate-500 text-xs uppercase font-bold tracking-tighter">Projects</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
     </>

@@ -4,9 +4,12 @@ import React, { useState } from "react";
 import { Send } from "lucide-react";
 
 import Input from "@/components/ui/Input";
-import { ContactFormData } from "@/types";
 import { supabase } from "@/utils/supabase/client";
-import {contactSchema} from '@/lib/validation/contactSchema'
+
+import {
+  contactSchema,
+  type ContactFormData,
+} from "@/lib/validation/contactSchema";
 
 type FormStatus = "idle" | "sending" | "success";
 
@@ -21,128 +24,176 @@ const ContactForm: React.FC = () => {
     message: "",
   });
 
+  const [errors, setErrors] = useState<
+    Partial<Record<keyof ContactFormData, string>>
+  >({});
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
+
+    const { name, value } = e.target;
+
     setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value,
+      [name]: value,
+    }));
+
+    // Clear field error while typing
+    setErrors((prev) => ({
+      ...prev,
+      [name]: "",
     }));
   };
 
-const handleSubmit = async (
-  e: React.FormEvent<HTMLFormElement>
-) => {
+  const handleSubmit = async (
+    e: React.FormEvent<HTMLFormElement>
+  ) => {
 
-  e.preventDefault();
+    e.preventDefault();
 
-  try {
+    // Validate form using zod
+    const result = contactSchema.safeParse(formData);
 
-    setFormStatus("sending");
+    // If validation fails
+    if (!result.success) {
 
-    const { error } = await supabase
-      .from("contact_messages")
-      .insert([
-        {
-          full_name: formData.name,
-          email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-        },
-      ]);
+      const fieldErrors: Partial<
+        Record<keyof ContactFormData, string>
+      > = {};
 
-    if (error) {
-      throw error;
+      result.error.issues.forEach((error) => {
+
+        const field = error.path[0] as keyof ContactFormData;
+
+        fieldErrors[field] = error.message;
+      });
+
+      setErrors(fieldErrors);
+
+      return;
     }
 
-    setFormStatus("success");
+    // Clear errors if validation passed
+    setErrors({});
 
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
+    try {
 
-    setTimeout(() => {
+      setFormStatus("sending");
+
+      const { error } = await supabase
+        .from("contact_messages")
+        .insert([
+          {
+            full_name: formData.name,
+            email: formData.email,
+            subject: formData.subject,
+            message: formData.message,
+          },
+        ]);
+
+      if (error) {
+        throw error;
+      }
+
+      setFormStatus("success");
+
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+
+      setTimeout(() => {
+        setFormStatus("idle");
+      }, 3000);
+
+    } catch (error) {
+
+      console.error(error);
+
       setFormStatus("idle");
-    }, 3000);
+    }
+  };
 
-  } catch (error) {
-
-    console.error(error);
-
-    setFormStatus("idle");
-  }
-};
   return (
 
     <form onSubmit={handleSubmit} className="space-y-4">
 
       <div className="grid sm:grid-cols-2 gap-4">
 
-        <Input
-          required
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          placeholder="Your Name"
-          aria-label="Your Name"
-          variant="default"
-          disabled={formStatus === "sending"}
-        />
+          <Input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Your Name"
+            aria-label="Your Name"
+            variant="default"
+            disabled={formStatus === "sending"}
+            error={errors.name}
+          />
 
-        <Input
-          required
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          placeholder="Email Address"
-          aria-label="Email Address"
-          variant="default"
-          disabled={formStatus === "sending"}
-        />
+          <Input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Email Address"
+            aria-label="Email Address"
+            variant="default"
+            disabled={formStatus === "sending"}
+            error={errors.email}
+          />
 
+      
       </div>
 
-      <Input
-        required
-        type="text"
-        name="subject"
-        value={formData.subject}
-        onChange={handleChange}
-        placeholder="Subject"
-        aria-label="Subject"
-        variant="default"
-        disabled={formStatus === "sending"}
-      />
+        <Input
+          type="text"
+          name="subject"
+          value={formData.subject}
+          onChange={handleChange}
+          placeholder="Subject"
+          aria-label="Subject"
+          variant="default"
+          disabled={formStatus === "sending"}
+          error={errors.subject}
+        />
 
-      <textarea
-        required
-        rows={5}
-        name="message"
-        value={formData.message}
-        onChange={handleChange}
-        placeholder="Your Message..."
-        aria-label="Your Message"
-        disabled={formStatus === "sending"}
-        className="
-          w-full px-6 py-4
-          bg-slate-950
-          border border-slate-800
-          rounded-2xl
-          focus:outline-none
-          focus:border-cyan-500
-          focus:ring-2
-          focus:ring-cyan-500/10
-          transition-all
-          text-white
-          resize-none
-          disabled:opacity-50
-        "
-      />
+
+      <div>
+        <textarea
+          rows={5}
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          placeholder="Your Message..."
+          aria-label="Your Message"
+          disabled={formStatus === "sending"}
+          className="
+            w-full px-6 py-4
+            bg-slate-950
+            border border-slate-800
+            rounded-2xl
+            focus:outline-none
+            focus:border-cyan-500
+            focus:ring-2
+            focus:ring-cyan-500/10
+            transition-all
+            text-white
+            resize-none
+            disabled:opacity-50
+          "
+        />
+
+        {errors.message && (
+          <p className="mt-1 text-sm text-red-400">
+            {errors.message}
+          </p>
+        )}
+      </div>
 
       <button
         type="submit"

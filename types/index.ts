@@ -48,5 +48,4 @@ export interface ExperienceTypes {
   company:String;
   period:String;
   description:String;
-  achievements:String[];
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import {Calendar} from 'lucide-react'
 import { ExperienceTypes } from '@/types/index'
 
-const ExperienceCards:React.FC<ExperienceTypes> = ({role,company,period,description,achievements}) => {
+const ExperienceCards:React.FC<ExperienceTypes> = ({role,company,period,description}) => {
   return (
     <div className="relative pl-7 md:pl-12 group">
             {/* Timeline Dot */}
@@ -24,13 +24,6 @@ const ExperienceCards:React.FC<ExperienceTypes> = ({role,company,period,descript
                 {description}
             </p>
 
-            <div className="flex flex-wrap gap-2">
-                {achievements.map((item, i) => (
-                <span key={i} className="text-[11px] font-bold bg-slate-800 text-slate-300 px-3 py-1 rounded-lg border border-slate-700/50">
-                    {item}
-                </span>
-                ))}
-            </div>
             </div>
         </div>
   )

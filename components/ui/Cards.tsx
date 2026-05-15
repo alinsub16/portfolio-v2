@@ -6,10 +6,12 @@ import {  ExternalLink } from 'lucide-react';
 import { LargeCardProps } from "@/types/index";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { motion } from 'framer-motion';
 
 const Cards: React.FC<LargeCardProps> = ({image, title, description, tags, isLatest, liveUrl, githubUrl}) => {
     return (
-        <div className="group bg-slate-900 rounded-3xl overflow-hidden border border-slate-800 hover:border-cyan-500/30 transition-all relative">
+        <div className="group bg-slate-900 rounded-3xl overflow-hidden border border-slate-800 hover:border-cyan-500/30 transition-all relative"
+        >
 
             {/* Latest Badge */}
             {isLatest && (

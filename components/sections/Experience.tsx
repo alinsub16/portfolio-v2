@@ -20,7 +20,6 @@ const Experience:React.FC = () => {
                 company={exp.company}
                 description={exp.description}
                 period={exp.period}
-                achievements={exp.achievements}
             />
             ))}
         </div>

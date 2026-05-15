@@ -35,7 +35,7 @@ const inputId = id || props.name;
       {error && (
         <p
           id={`${inputId}-error`}
-          className="text-red-500 text-xs"
+          className="text-red-400 text-xs"
         >
           {error}
         </p>

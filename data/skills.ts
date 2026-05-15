@@ -7,7 +7,7 @@ import {
   FaWordpress,
 } from "react-icons/fa";
 
-import { SiNextdotjs, SiTypescript, SiTailwindcss, SiMysql, SiMongodb, SiPostman, SiExpress, SiSocketdotio,SiAxios } from "react-icons/si";
+import { SiNextdotjs, SiTypescript, SiTailwindcss, SiMysql, SiMongodb, SiPostman, SiExpress, SiSocketdotio,SiAxios ,SiSupabase } from "react-icons/si";
 
 import { Skill } from "@/types/index";
 
@@ -28,6 +28,8 @@ export const SKILLS: Skill[] = [
   // DATABASE
   { name: "MongoDB", icon: SiMongodb, color: "text-green-500" },
   { name: "MySQL", icon: SiMysql, color: "text-blue-400" },
+  { name: "Supabase", icon: SiSupabase, color: "text-green-400" },
+ 
 
   // TOOLS
   { name: "Git", icon: FaGitAlt, color: "text-red-500" },
