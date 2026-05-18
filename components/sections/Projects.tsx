@@ -10,8 +10,8 @@ const Projects: React.FC = () => {
           <div className="max-w-7xl mx-auto">
             <div className="flex justify-between items-end mb-16">
               <div className='text-center w-full'>
-                <h2 className="text-4xl font-bold mb-2">Selected Works</h2>
-                <p className="text-slate-500">Products built with passion and precision.</p>
+                <h2 className="text-4xl font-bold mb-2">Personal Projects</h2>
+                <p className="text-slate-500">Hands-on projects using modern web technologies</p>
               </div>
               {/* <button className="hidden sm:flex items-center gap-2 text-cyan-400 font-bold hover:underline">
                 View All <Briefcase size={18} />

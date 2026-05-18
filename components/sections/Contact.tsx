@@ -22,7 +22,7 @@ const Contact: React.FC = () => {
                   
                   <div className="space-y-6 pt-4 w-3/4">
                     <div className="flex items-center gap-6 group cursor-pointer">
-                      <div className="w-14 h-14 bg-slate-800 rounded-2xl flex items-center justify-center text-cyan-400 group-hover:bg-cyan-500 group-hover:text-slate-900 transition-all">
+                      <div className="w-14 h-14 px-2 bg-slate-800 rounded-2xl flex items-center justify-center text-cyan-400 group-hover:bg-cyan-500 group-hover:text-slate-900 transition-all">
                         <Mail size={24} />
                       </div>
                       <div>

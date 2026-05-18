@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from "next/image";
-import { User } from 'lucide-react'
+import { User,Download } from 'lucide-react'
 import Me from "@/assets/me.jpg";
 import { motion } from "motion/react";
 import { fadeUp, fadeLeftToRight, fadeRightToLeft } from '@/animations/variants';
@@ -45,12 +45,27 @@ const About: React.FC = () => {
               <p className="text-slate-400 text-lg leading-relaxed">
                 I am Christopher Alinsub, a Web Developer with 2 years of experience building responsive and scalable web applications using modern technologies such as React, Node.js, TypeScript, and WordPress. I specialize in developing clean, user-friendly interfaces and integrating backend APIs to deliver seamless user experiences. Adaptable and detail-oriented, I am committed to continuous learning and improving development practices within collaborative team environments.
               </p>
-              <div className="grid grid-cols-2 gap-6 pt-4">
-                <div className="p-5 bg-slate-800/50 rounded-2xl border border-slate-700 hover:border-cyan-500/50 transition-colors">
-                  <p className="text-cyan-400 text-3xl font-bold">50+</p>
-                  <p className="text-slate-500 text-xs uppercase font-bold tracking-tighter">Projects</p>
-                </div>
-              </div>
+              <div className="w-full block max-w-60 gap-6 pt-4">
+                <a
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-5 bg-slate-800/50 rounded-2xl border border-slate-700 hover:border-cyan-500/50 transition-colors cursor-pointer block group"
+                >
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-cyan-400 text-xl font-bold group-hover:translate-x-1 transition-transform">
+                        Resume
+                      </p>
+                      <p className="text-slate-500 text-xs uppercase font-bold tracking-tighter">
+                        View / Download PDF
+                      </p>
+                    </div>
+
+                    <Download className="text-cyan-400 w-6 h-6 group-hover:scale-110 transition-transform" />
+                  </div>
+                </a>
+            </div>
             </motion.div>
           </div>
         </section>
