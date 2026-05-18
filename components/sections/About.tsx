@@ -47,7 +47,7 @@ const About: React.FC = () => {
               </p>
               <div className="w-full block max-w-60 gap-6 pt-4">
                 <a
-                  href="/resume.pdf"
+                  href="/Alinsub_Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-5 bg-slate-800/50 rounded-2xl border border-slate-700 hover:border-cyan-500/50 transition-colors cursor-pointer block group"
